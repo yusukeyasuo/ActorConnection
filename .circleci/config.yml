@@ -49,13 +49,10 @@ jobs:
           path: /tmp/test-results
       - run: ssh $SSH_USER@$SSH_HOST "/home/ec2-user/ActorConnection/deploy.sh"
   deploy-job:
+    requires:
+      - build
     steps:
       - add_ssh_keys:
           fingerprints:
             - "d7:c7:44:15:76:3c:9f:ea:95:48:7b:78:7b:9f:51:23"
       - run: ssh $SSH_USER@$SSH_HOST "/home/ec2-user/ActorConnection/deploy.sh"
-          requires:
-            - build
-#          filters:
-#            branches:
-#              only: master
