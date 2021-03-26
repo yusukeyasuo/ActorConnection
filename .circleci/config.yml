@@ -47,3 +47,7 @@ jobs:
           command: bundle exec rspec
       - store_test_results:
           path: /tmp/test-results
+      - add_ssh_keys:
+          fingerprints:
+            - d7:c7:44:15:76:3c:9f:ea:95:48:7b:78:7b:9f:51:23
+      - run: ssh $SSH_USER@$SSH_HOST "/home/ec2-user/ActorConnection/deploy.sh"
