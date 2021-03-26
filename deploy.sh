@@ -1,5 +1,8 @@
 set +e
 
+source ~/.bash_profile
+source ~/.bashrc
+
 cd /home/ec2-user/ActorConnection/
 
 bundle install --without test development
