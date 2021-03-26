@@ -47,7 +47,6 @@ jobs:
           command: bundle exec rspec
       - store_test_results:
           path: /tmp/test-results
-      - run: ssh $SSH_USER@$SSH_HOST "/home/ec2-user/ActorConnection/deploy.sh"
   deploy-job:
     machine:
       enabled: true
